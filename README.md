@@ -97,6 +97,6 @@ export const ThemeSwitcher = () => {
 
 
   ## 🔗 Live Demo
-[https://themehub-live-demo.netlify.app](https://themehub-live-demo.netlify.app)
+[https://themehub-live-demo.netlify.app](https://multithemeswitcherapp.netlify.app/)
 
 
