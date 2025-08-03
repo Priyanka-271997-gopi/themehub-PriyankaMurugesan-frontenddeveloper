@@ -39,10 +39,9 @@ themehub/
    ```bash
 https://github.com/Priyanka-271997-gopi/themehub-PriyankaMurugesan-frontenddeveloper.git
 
-Install dependencies
+## 📦 How to Run Locally
+bash
 npm install
-
-Start the development server
 npm run dev
 
 📦 Features
