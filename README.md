@@ -95,6 +95,5 @@ export const ThemeSwitcher = () => {
 | `utils/`      | Utility functions, helper logic               |
 | `context/`    | Context creation, value provided, usage       |
 
-  ## 🔗 Live Demo
-(multithemeswitcherapp.netlify.app)
+  
 
