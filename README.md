@@ -80,28 +80,43 @@ Visit: http://localhost:5173
 
 
  Example 1: Component Documentation
+
+
+src/components/Header.tsx
 tsx
-// ThemeSwitcher.tsx
-
 /**
- * ThemeSwitcher component allows users to toggle between light, dark, and pastel themes.
- * It uses React Context to manage and persist theme across the app.
+ * Header Component
+ * Displays the top navigation bar with theme switch and site branding.
  */
-export const ThemeSwitcher = () => {
-  const { theme, setTheme } = useTheme();
 
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setTheme(e.target.value as ThemeType);
-  };
+import React from 'react';
 
+const Header = () => {
   return (
-    <select onChange={handleChange} value={theme}>
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
-      <option value="pastel">Pastel</option>
-    </select>
+    <header>
+      {/* Site Logo */}
+      {/* Theme Toggle Button */}
+    </header>
   );
 };
+
+export default Header;
+
+2)src/contexts/ThemeContext.tsx
+tsx
+
+/**
+ * ThemeContext
+ * Manages global theme state (e.g., light/dark/custom themes)
+ * using React Context API.
+ */
+
+import { createContext, useState, useContext } from 'react';
+
+export const ThemeContext = createContext(...);
+
+// Custom hook to use theme context
+export const useTheme = () => useContext(ThemeContext);
 
 /**
  * useProducts Hook
@@ -128,6 +143,43 @@ const useProducts = () => {
 
 export default useProducts;
 
+
+3)src/pages/Home.tsx
+tsx
+
+/**
+ * Home Page
+ * Displays a list of product cards and the layout with header.
+ */
+
+import React from 'react';
+import ProductCard from '../components/ProductCard';
+
+const Home = () => {
+  return (
+    <div>
+      {/* Product List Rendering */}
+    </div>
+  );
+};
+
+export default Home;
+
+src/types/index.ts
+ts
+
+/**
+ * Global Type Definitions
+ * Define interfaces used throughout the project.
+ */
+
+export interface Product {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+  description?: string;
+}
 
  add documentation
 
