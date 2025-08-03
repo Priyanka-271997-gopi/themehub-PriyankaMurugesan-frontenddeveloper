@@ -22,16 +22,31 @@ A dynamic multi-theme switching application showcasing user interface adaptabili
 
 ## 📂 Project Structure
 
-themehub/
-├── public/
+your-project/
 ├── src/
-│ ├── assets/ # Images, Icons
-│ ├── components/ # Reusable UI components
-│ ├── themes/ # Theme-specific styles / configs
-│ └── App.tsx # Main app entry
-├── tailwind.config.js
-├── package.json
-└── README.md
+│   ├── components/
+│   │   ├── Header.tsx ✅
+│   │   ├── Layout.tsx ✅
+│   │   └── ProductCard.tsx ✅
+│   ├── contexts/
+│   │   └── ThemeContext.tsx ✅
+│   ├── hooks/
+│   │   └── useProducts.ts ✅
+│   ├── pages/
+│   │   ├── Home.tsx ✅
+│   │   ├── About.tsx ✅
+│   │   └── Contact.tsx ✅
+│   ├── types/
+│   │   └── index.ts ✅
+│   ├── App.tsx ✅
+│   ├── main.tsx ✅
+│   └── index.css ✅
+├── index.html ✅
+├── package.json ✅
+├── tailwind.config.js ✅
+├── vite.config.ts ✅
+└── tsconfig.json ✅
+
 
 ## 💻 How to Run Locally
 
@@ -88,13 +103,42 @@ export const ThemeSwitcher = () => {
   );
 };
 
-| File          | What to Comment                               |
-| ------------- | --------------------------------------------- |
-| `App.tsx`     | App structure, layout rendering               |
-| `components/` | Purpose of each component, props, state logic |
-| `themes/`     | Theme objects, how switching logic works      |
-| `utils/`      | Utility functions, helper logic               |
-| `context/`    | Context creation, value provided, usage       |
+/**
+ * useProducts Hook
+ * Fetches product data from API and manages loading/error state.
+ */
+
+import { useEffect, useState } from 'react';
+
+const useProducts = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch product list
+    fetch('/api/products')
+      .then(res => res.json())
+      .then(data => setProducts(data))
+      .catch(err => console.error('Product fetch error:', err))
+      .finally(() => setLoading(false));
+  }, []);
+
+  return { products, loading };
+};
+
+export default useProducts;
+
+
+ add documentation
+
+| File/Folder           | What to Document                             |
+| --------------------- | -------------------------------------------- |
+| `components/*.tsx`    | What the component does and key props used   |
+| `contexts/*.tsx`      | What context it provides and how to use it   |
+| `hooks/*.ts`          | What it fetches/returns and any side effects |
+| `pages/*.tsx`         | Purpose of the page and structure of layout  |
+| `types/*.ts`          | Interface descriptions and expected data     |
+| `App.tsx`, `main.tsx` | Routing and App bootstrap info               |
 
 
   ## 🔗 Live Demo
