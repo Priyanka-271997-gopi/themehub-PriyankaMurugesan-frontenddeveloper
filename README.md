@@ -65,8 +65,6 @@ Visit: http://localhost:5173
 
  Example 1: Component Documentation
 tsx
-Copy
-Edit
 // ThemeSwitcher.tsx
 
 /**
