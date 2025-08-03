@@ -45,7 +45,7 @@ npm install
 npm run dev
 
 📦 Features
-🎨 Switch between multiple themes
+🎨 Switch between multiple themes  3 Dynamic themes (Light, Dark, Dim)
 
 📱 Responsive design (mobile-first)
 
@@ -58,6 +58,7 @@ npm run dev
 🧑‍🦯 Accessible (WCAG 2.1 compliant)
 
 ⚡ Performance-optimized with lazy loading
+
 
 Visit: http://localhost:5173
 
